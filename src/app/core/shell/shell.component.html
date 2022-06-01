@@ -1,0 +1,99 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+        
+    </button>
+    
+    
+    
+    <span>CORPORACION AQUA PERU S.A.C</span>
+<span class="example-spacer"></span>
+<mat-form-field appearance="fill" class="baja">
+    <mat-label >Proyectos</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of [{value:'1',viewValue:'primero'},{value:'2',viewValue:'segundo'}]" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+</mat-toolbar>
+    
+   
+    
+
+    
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+  
+        <img class="avatar mat-elevation-z8" src="../../assets/img/cabecera.png" />
+  
+        <h4 class="name">ALMACÉN</h4>
+        <!-- <p class="designation">Análisis Económico Financiero</p>-->
+  
+
+
+        <button mat-button class="menu-button" >
+            <mat-icon>airport_shuttle</mat-icon>
+            <span class="designation">salida</span>
+        </button>
+
+        <!-- <mat-divider></mat-divider> -->
+            
+        <!-- <p class="designation">Insumos y Herramientas</p>-->
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button">
+            <mat-icon>time_to_leave</mat-icon>
+            <span class="designation" [routerLink]="['despacho']">Entrada</span>
+        </button>
+  
+        <mat-divider></mat-divider>
+
+        
+  
+    </mat-sidenav>
+   
+    
+    <mat-sidenav-content >
+        
+        
+        <div class="content mat-elevation-z8 ">
+           <!-- <h1 
+            [ngStyle]="{'color':'red','background-color':'#ff0','text-align':'center'}"
+            
+            >{{1+1}}</h1>
+            -->
+            <!--
+            <app-submenu></app-submenu>    
+                -->
+            
+            <!--<div *ngIf='loading' id="myModal" class="modal">
+                <div class="lds-roller">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            -->
+
+              
+              <router-outlet></router-outlet>
+            
+            
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
