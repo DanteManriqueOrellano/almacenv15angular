@@ -12,6 +12,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { IngresoModule } from '../ingreso/ingreso.module';
+import { SharingInsumoService } from '../sharing.insumo.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,8 +34,12 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    FlexLayoutModule,
+    IngresoModule,
+    HttpClientModule
     
   ],
-  exports:[ShellComponent]
+  exports:[ShellComponent],
+  providers:[SharingInsumoService]
 })
 export class CoreModule { }

@@ -1,0 +1,73 @@
+<p>registraringreso works!</p>
+<fieldset [formGroup]="form.formGroup">
+    <mat-form-field >
+        <input matInput placeholder="idingreso" [formControlName]="form.formControlNames.idingreso" autocomplete="off"/></mat-form-field>
+    
+    <mat-form-field><mat-label>documento</mat-label>
+        <mat-select [formControlName]="form.formControlNames.iddocumento" name="food">
+          <mat-option *ngFor="let food of [
+          {'iddocumento':1,'documento':'FACTURA'},
+          {'iddocumento':2,'documento':'BOLETA'},
+          {'iddocumento':3,'documento':'DJ'},
+          {'iddocumento':4,'documento':'PROFORMA'},
+          {'iddocumento':5,'documento':'TIKET'},
+          {'iddocumento':6,'documento':'RECIBO'},
+          {'iddocumento':7,'documento':'TRANS.BANK'}]" [value]="food.iddocumento">
+            {{food.documento}}
+          </mat-option>
+        </mat-select>
+        
+    </mat-form-field>
+    
+    
+    <mat-form-field>
+      <input type="text"
+             placeholder="idinsumo"
+             matInput
+             [formControlName]="form.formControlNames.idinsumo"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions " [value]="option.idinsumo">
+          {{option.insumo}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <!--
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Number</mat-label>
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    -->
+
+
+
+
+
+    
+    <mat-form-field><input matInput type="number"  placeholder="idproveedor" [formControlName]="form.formControlNames.idproveedor" autocomplete="off"/></mat-form-field>
+    
+    <mat-form-field >
+        <mat-label>Fecha de Ingreso</mat-label>
+        <input matInput [matDatepicker]="picker1" [formControlName]="form.formControlNames.fingreso">
+
+    </mat-form-field>
+  
+  
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+
+    <mat-form-field><input matInput type="number"  placeholder="nrodocumento" [formControlName]="form.formControlNames.nrodocumento" autocomplete="off"/></mat-form-field>
+    <mat-form-field><input matInput type="number"  placeholder="cantidad" [formControlName]="form.formControlNames.cantidad" autocomplete="off"/></mat-form-field>
+    <mat-form-field><input matInput type="number"  placeholder="punitario" [formControlName]="form.formControlNames.punitario" autocomplete="off"/></mat-form-field>
+    <mat-checkbox [formControlName]="form.formControlNames.reingreso"> reingreso</mat-checkbox>
+</fieldset>

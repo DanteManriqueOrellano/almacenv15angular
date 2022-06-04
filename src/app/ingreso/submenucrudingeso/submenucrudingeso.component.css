@@ -1,0 +1,24 @@
+mat-card{
+    width: 25%;
+    height: 25%;
+}
+.contentcrud {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.contentcrud mat-card{
+    margin-right: 15px;
+}
+.subcrud {
+    padding: 18px;
+}
+
+.mat-card:hover{
+    box-shadow: -1px 10px 10px 0px rgba(0,0,0,0.2);
+  }
+button {
+    margin: .2em;
+  }
